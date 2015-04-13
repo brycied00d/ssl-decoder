@@ -22,7 +22,8 @@ function verify_certificate_hostname($raw_cert, $host) {
         if ($cert_data['extensions']['subjectAltName']) {
             foreach ( explode("DNS:", $cert_data['extensions']['subjectAltName']) as $altName ) {
                 foreach (explode(",", $altName) as $key => $value) {
-                    if ( !empty(str_replace(',', "", "$value"))) {
+                    $tmp_empty = str_replace(',', "", "$value");
+                    if ( !empty($tmp_empty)) {
                         $cert_host_names[] = str_replace(" ", "", str_replace(',', "", "$value"));
                     }
                 }

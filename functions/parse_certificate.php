@@ -251,7 +251,8 @@ function cert_parse($data) {
   echo "<td>Subject Alternative Names</td>";
   echo "<td>";
   foreach ( explode("DNS:", $data['cert_data']['extensions']['subjectAltName']) as $altName ) {
-    if ( !empty(str_replace(',', " ", "$altName"))) {
+    $tmp_empty = str_replace(',', "", "$altName");
+    if ( !empty($tmp_empty)) {
       echo htmlspecialchars(str_replace(',', " ", "$altName"));
       echo "<br>";
     }
@@ -541,7 +542,8 @@ function cert_parse($data) {
             <?php 
             foreach ($data['cert_data']['extensions'] as $name=>$extension) {
 
-              if ( !empty(str_replace(',', " ", "$extension"))) {
+              $tmp_empty = str_replace(',', "", "$extension");
+              if ( !empty($tmp_empty)) {
                 echo "<strong>" . htmlspecialchars("$name") . "</strong>";
                 echo "<pre>";
                 echo htmlspecialchars($extension);

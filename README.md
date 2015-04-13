@@ -34,7 +34,7 @@ Simple PHP script which decodes an SSL connection and/or certificate and display
 
 ### Requirements
 
-- PHP 5.6+
+- PHP 5.4+
 - OpenSSL
 - PHP must allow shell_exec and remote fopen.
 

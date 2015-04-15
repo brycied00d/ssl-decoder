@@ -37,7 +37,7 @@ Simple PHP script which decodes an SSL connection and/or certificate and display
 - PHP 5.6+
 - OpenSSL
 - PHP must allow shell_exec and remote fopen.
-- Debian: `php-intl` package installed.
+- Debian: `php5-intl`, `php5-curl` packages installed.
 
 ### Installation
 
